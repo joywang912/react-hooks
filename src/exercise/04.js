@@ -57,8 +57,8 @@ function Board({onClick, squares}) {
 
 function Game() {
   const initialSquares = Array(9).fill(null)
-  const [currentStep, setCurrentStep] = useLocalStorageState('currentStep', 0)
-  const [history, setHistory] = useLocalStorageState('history', [initialSquares])
+  const [currentStep, setCurrentStep] = useLocalStorageState('tic-tac-toe:step', 0)
+  const [history, setHistory] = useLocalStorageState('tic-tac-toe:history', [initialSquares])
   const currentSquares = history[currentStep]
   const nextValue = calculateNextValue(currentSquares)
   const winner = calculateWinner(currentSquares)
